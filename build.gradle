@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.3'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'io.freefair.lombok' version '6.6.3'
+}
+
+allprojects {
+    apply plugin: 'io.freefair.lombok'
+
+    repositories {
+        mavenCentral()
+    }
+
+    group = 'com.poc'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '17'
+}
+
+subprojects {
+    apply plugin: 'java'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
