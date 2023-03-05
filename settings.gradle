@@ -1,4 +1,5 @@
 rootProject.name = 'meeting-scheduler'
 include 'persistence'
 include 'api'
+include 'domain'
 
