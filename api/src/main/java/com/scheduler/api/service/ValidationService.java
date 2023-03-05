@@ -25,7 +25,7 @@ public class ValidationService {
         if (startTime.isAfter(endTime) || startTime.isEqual(endTime))
             throw new ConflictException(START_BEFORE_END);
 
-        if (doesNotMeetTimeSlize(startTime) || doesNotMeetTimeSlize(endTime))
+        if (doesNotMeetTimeSlice(startTime) || doesNotMeetTimeSlice(endTime))
             throw new ConflictException(INCORRECT_TIME_SLICE);
 
         int participantsSize = meetingDto.getParticipants().size();
@@ -33,7 +33,7 @@ public class ValidationService {
             throw new ConflictException(ApiConstants.PARTICIPANT_COUNT);
     }
 
-    private boolean doesNotMeetTimeSlize(ZonedDateTime time) {
+    private boolean doesNotMeetTimeSlice(ZonedDateTime time) {
         return time.getMinute() % TIME_SLICE != 0;
     }
 }
