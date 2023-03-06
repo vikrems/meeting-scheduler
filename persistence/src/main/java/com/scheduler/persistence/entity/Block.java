@@ -16,10 +16,10 @@ import static lombok.AccessLevel.PRIVATE;
 public class Block {
 
     @DynamoDBHashKey
-    private String partitionKey;
+    private String partitionKey; //UserId_date
 
     @DynamoDBRangeKey
-    private int sortKey;
+    private int sortKey; //time rank
 
     @DynamoDBAttribute
     private int allocation;
